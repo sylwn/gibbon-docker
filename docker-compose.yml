@@ -1,0 +1,36 @@
+version: '2'
+
+services:
+    php:
+        container_name: php-gibbon
+        image: gibbon/php-gibbon
+        build:
+            context: ./docker/php-fpm
+            args:
+                TIMEZONE: ${TIMEZONE}
+        volumes:
+            - ${LOCAL_PATH_APP}:/var/www/gibbon
+
+    nginx:
+        container_name: nginx-gibbon
+        image: nginx-gibbon
+        build:
+            context: ./docker/nginx
+            args:
+                DNS_NAME: ${DNS_NAME}
+        ports:
+            - ${NGINX_PORT}:80
+        volumes_from:
+            - php
+        volumes:
+            - ./docker/nginx/logs/:/var/log/nginx
+
+    db:
+        container_name: db-gibbon
+        image: mysql:5.7
+        ports:
+            - ${MYSQL_PORT}:3306
+        environment:
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
