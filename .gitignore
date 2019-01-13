@@ -1,2 +1,6 @@
 .env
 gibbon
+# ignore files in folder foo
+docker/nginx/logs/*
+# but keep the folder
+docker/nginx/logs//.keep

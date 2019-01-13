@@ -8,6 +8,7 @@ services:
             context: ./docker/php-fpm
             args:
                 TIMEZONE: ${TIMEZONE}
+                LOCALES: ${LOCALES}
         volumes:
             - ${LOCAL_PATH_APP}:/var/www/gibbon
 

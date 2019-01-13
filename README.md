@@ -10,6 +10,7 @@ Pre-requisit
 ===========
 1) Install docker at
 2) Install docker-compose
+3) Install git
 
 Required php extensions
 =======================
@@ -32,9 +33,19 @@ Supported versions of gibbon:
 
 Gibbon 1.17.0
 
+Language Supported
+==================
+
+1) SSH to the php container
+2) https://people.debian.org/~schultmc/locales.html
+
 
 Folder structure in depth
 =========================
 
 /root/docker/nginx => nginx configuration with Dockerfile
 /root/docker/php-fpm => php-fpm configuration for nginx via Dockerfile
+
+Theme
+=====
+The theme by default was modified
