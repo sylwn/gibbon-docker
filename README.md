@@ -1,37 +1,28 @@
-Docker for Gibbon with Nginx
+Docker for Gibbon
 
 Description
 ===========
-PHP Version: 7.3
-Web server: Nginx
-Database: MySQL 5.7
+This project provide a dockerized version of Gibbon (https://docs.gibbonedu.org) easy to install. It is configured to run the following infrastructure:
+- PHP Version: 7.3
+- Web server: Nginx
+- Database: MySQL 5.7
 
 Pre-requisit
-===========
-1) Install docker at
-2) Install docker-compose
-3) Install git
+============
+To run this project you need first to install the following softwares:
+1) Install docker: https://www.docker.com/get-started
+2) Install docker-compose: https://docs.docker.com/compose/install/
+3) Install git: https://git-scm.com/downloads
 
-Required php extensions
-=======================
-gettext
-curl
-gd
-
-Set up
-=======
-1) Clone docker project from git repository: git clone my-repository
-2) Clone gibbon project into root folder: git clone
-3) Make a copy of .env_dist to .env: cp .env_dist .env
-4) Update variables from .env with values corresponding to your environment
-5) Run docker-composer build from root folder
-6) Run docker-composer up -d from root folder
-7) Go to localhost:8081
-
-Supported versions of gibbon:
-============================
-
-Gibbon 1.17.0
+Install and run
+===============
+1) Clone docker project: git clone https://github.com/sylwn/gibbon-docker.git
+2) Go in root folder and download Gibbon: cd gibbon-docker && wget "https://github.com/GibbonEdu/core/archive/v16.0.01.zip"
+3) Unzip Gibbon: unzip -a v16.0.01.zip
+4) Make a copy of env variables file and update it (accordingly to your env): cp .env_dist .env
+6) Build docker containers: docker-composer build
+7) Run conatiners: docker-composer up -d
+8) Visit the project: your.local.domain:port (default: gibbon.local:8081)
 
 Language Supported
 ==================
