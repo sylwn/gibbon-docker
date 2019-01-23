@@ -17,8 +17,8 @@ To run this project you need first to install the following softwares:
 Install and run
 ===============
 1) Clone docker project: git clone https://github.com/sylwn/gibbon-docker.git
-2) Go in root folder and download Gibbon: cd gibbon-docker && wget "https://github.com/GibbonEdu/core/archive/v16.0.01.zip"
-3) Unzip Gibbon: unzip -a v16.0.01.zip
+2) Go in root folder and download Gibbon: cd sms && curl -o v17.0.00.zip https://github.com/GibbonEdu/core/archive/v17.0.00.zip
+3) Unzip Gibbon: unzip -a v17.0.01.zip
 4) Make a copy of env variables file and update it (accordingly to your env): cp .env_dist .env
 6) Build docker containers: docker-composer build
 7) Run conatiners: docker-composer up -d
